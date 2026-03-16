@@ -1,0 +1,307 @@
+
+* 📌 Phase 0 – Planning
+* 🏗 Phase 1 – Core Platform (MVP)
+* 🧠 Phase 2 – AI Integration
+* 📊 Phase 3 – Reporting & Analytics
+* 🏢 Phase 4 – B2B Features
+* 🚀 Phase 5 – Deployment & Optimization
+
+---
+
+# ✅ MASTER TODO LIST – AI INTERVIEW COACH
+
+---
+
+# 📌 PHASE 0 – PROJECT SETUP & PLANNING
+
+## Product & Architecture
+
+* [ ] Finalize MVP feature list
+* [ ] Define feature prioritization (Must / Should / Later)
+* [ ] Freeze database schema
+* [ ] Finalize API contract definitions
+* [ ] Define Confidence Index formula properly
+* [ ] Create system architecture diagram (final version)
+* [ ] Create ER diagram (finalized)
+* [ ] Create user flow diagrams
+
+## Infrastructure Planning
+
+* [ ] Create AWS account structure
+* [ ] Setup IAM roles & permissions
+* [ ] Define S3 bucket structure (raw / processed / reports)
+* [ ] Plan Step Functions workflow
+* [ ] Estimate AWS monthly cost
+
+---
+
+# 🏗 PHASE 1 – CORE PLATFORM (MVP BUILD)
+
+## 1️⃣ Frontend (React)
+
+### Authentication
+
+* [ ] Login page
+* [ ] Register page
+* [ ] OTP verification
+* [ ] Role-based routing
+* [ ] JWT handling
+
+### Dashboard
+
+* [ ] User dashboard UI
+* [ ] Interview history page
+* [ ] Exam history page
+* [ ] Profile edit page
+* [ ] Progress graph placeholders
+
+### Interview UI
+
+* [ ] Role selection screen
+* [ ] Interview configuration page
+* [ ] Camera & mic permission handling
+* [ ] Video recording component
+* [ ] Audio recording extraction
+* [ ] Timer component
+* [ ] Question display system
+* [ ] End session screen
+
+### Exam UI
+
+* [ ] MCQ test page
+* [ ] Timer integration
+* [ ] Auto-submit logic
+* [ ] Result screen
+
+---
+
+## 2️⃣ Backend (FastAPI)
+
+### Core APIs
+
+* [ ] User registration API
+* [ ] Login API
+* [ ] Token validation middleware
+* [ ] Session generation API
+* [ ] Question fetch API
+* [ ] Answer submission API
+* [ ] Feedback summary API
+* [ ] Difficulty adjustment API
+
+### Database
+
+* [ ] Setup mongodb
+* [ ] Create collections:
+
+  * [ ] Users
+  * [ ] Interview Sessions
+  * [ ] Questions
+  * [ ] Responses
+  * [ ] Voice Metrics
+  * [ ] Visual Metrics
+  * [ ] Reports
+* [ ] Add indexing
+* [ ] Add foreign key constraints
+
+---
+
+# 🧠 PHASE 2 – AI INTEGRATION
+
+---
+
+## 🎤 Voice Analysis (Amazon Transcribe)
+
+* [ ] Setup S3 audio upload
+* [ ] Trigger transcription job
+* [ ] Enable Call Analytics
+* [ ] Parse JSON transcript
+* [ ] Extract:
+
+  * [ ] WPM
+  * [ ] Filler words
+  * [ ] Silence duration
+  * [ ] Loudness
+  * [ ] Sentiment
+* [ ] Store in voice_metrics table
+
+---
+
+## 👁 Visual Analysis (Amazon Rekognition)
+
+* [ ] Implement frame extraction (1 frame/sec)
+* [ ] Send frames to DetectFaces API
+* [ ] Extract:
+
+  * [ ] Eye direction
+  * [ ] Emotions
+  * [ ] Head pose
+  * [ ] Smile %
+* [ ] Calculate:
+
+  * [ ] Eye contact %
+  * [ ] Composure score
+  * [ ] Stress indicator
+* [ ] Store visual metrics
+
+---
+
+## 🧠 Content Evaluation (Amazon Bedrock / Claude)
+
+* [ ] Design evaluation prompt template
+* [ ] Inject question + transcript
+* [ ] Enforce JSON output format
+* [ ] Extract:
+
+  * [ ] Technical score
+  * [ ] Structure score
+  * [ ] Completeness
+  * [ ] Strengths
+  * [ ] Weaknesses
+* [ ] Store text metrics
+
+---
+
+## 🔗 Multimodal Fusion
+
+* [ ] Normalize timestamps (ms conversion)
+* [ ] Create aggregation pipeline
+* [ ] Implement correlation logic:
+
+  * [ ] High pause + confusion = Knowledge gap
+  * [ ] Fast speech + distraction = Nervous rushing
+* [ ] Compute Confidence Index (CI)
+* [ ] Store CI score
+
+---
+
+# 📊 PHASE 3 – REPORTING SYSTEM
+
+---
+
+## Report Engine
+
+* [ ] Build report aggregation service
+* [ ] Generate structured report JSON
+* [ ] Create report scoring logic
+* [ ] Build PDF report generator
+* [ ] Store report in S3
+* [ ] Add report download endpoint
+
+## Dashboard Analytics
+
+* [ ] Line graph – Confidence growth
+* [ ] Pie chart – Skill gap distribution
+* [ ] Bar graph – Voice vs Visual vs Content score
+* [ ] Session comparison logic
+
+---
+
+# 🏢 PHASE 4 – B2B FEATURES
+
+---
+
+## Admin Panel
+
+* [ ] Admin login
+* [ ] Add students
+* [ ] Assign interview practice
+* [ ] View batch analytics
+* [ ] Export CSV reports
+
+## Institutional Analytics
+
+* [ ] Skill cluster heatmap
+* [ ] Weakest domain detection
+* [ ] Cohort progress tracking
+* [ ] Batch comparison view
+
+---
+
+# 💳 Monetization Module
+
+* [ ] Integrate payment gateway
+* [ ] Lock premium report
+* [ ] Subscription logic
+* [ ] Access control after payment
+
+---
+
+# 🔒 SECURITY & COMPLIANCE
+
+* [ ] HTTPS setup
+* [ ] Encrypt S3 objects
+* [ ] Secure JWT implementation
+* [ ] Implement RBAC
+* [ ] Consent popup for camera/mic
+* [ ] Data retention policy
+* [ ] Logging & monitoring
+
+---
+
+# 🚀 PHASE 5 – DEPLOYMENT & SCALING
+
+---
+
+## DevOps
+
+* [ ] Dockerize backend
+* [ ] Setup CI/CD pipeline
+* [ ] Setup AWS EC2 / ECS
+* [ ] Setup Load balancer
+* [ ] Configure Auto-scaling
+* [ ] Setup CloudWatch monitoring
+
+## Performance Optimization
+
+* [ ] Parallel processing via Step Functions
+* [ ] Optimize token usage in LLM
+* [ ] Batch processing optimization
+* [ ] Caching frequent queries
+
+---
+
+# 🧪 TESTING CHECKLIST
+
+---
+
+## Unit Testing
+
+* [ ] API validation tests
+* [ ] Scoring logic tests
+* [ ] CI formula tests
+
+## Integration Testing
+
+* [ ] End-to-end interview session test
+* [ ] Audio pipeline test
+* [ ] Visual pipeline test
+* [ ] Report generation test
+
+## Load Testing
+
+* [ ] Concurrent interview sessions
+* [ ] API response latency testing
+
+---
+
+# 🎯 FINAL PRE-LAUNCH CHECKLIST
+
+* [ ] Full interview simulation works
+* [ ] AI metrics generated correctly
+* [ ] Confidence Index calculated
+* [ ] Reports downloadable
+* [ ] Dashboard reflects correct analytics
+* [ ] No data leakage
+* [ ] Payment flow working
+
+---
+
+# 🧩 OPTIONAL (ADVANCED – PHASE 2+)
+
+* [ ] Group Discussion module
+* [ ] Resume parsing (Textract)
+* [ ] JD skill matching (RAG)
+* [ ] Multilingual support
+* [ ] Edge computing version
+* [ ] Human mentor integration
+
