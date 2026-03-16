@@ -289,3 +289,5 @@ export function AccountDetailModal({ account, open, onClose, onUpdate }: Account
     </Dialog>
   );
 }
+
+export default AccountDetailModal;
